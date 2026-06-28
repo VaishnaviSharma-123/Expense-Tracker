@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const app = express();
 const PORT = 3000;
@@ -14,7 +15,7 @@ app.use((req, res, next) => {
 });
 
 // 2. MongoDB Connect 
-const uri = "mongodb://Vaishnavi:1fkpu4XwcZfTfd8R@ac-muucmrp-shard-00-00.lh0bh6x.mongodb.net:27017,ac-muucmrp-shard-00-01.lh0bh6x.mongodb.net:27017,ac-muucmrp-shard-00-02.lh0bh6x.mongodb.net:27017/?ssl=true&replicaSet=atlas-yi7yhg-shard-0&authSource=admin&appName=Cluster0";
+const uri = process.env.MONGO_URI;
 mongoose.connect(uri)
   .then(() => console.log('MongoDB connection established!'))
   .catch(err => console.log('Error:', err));

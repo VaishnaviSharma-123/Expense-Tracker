@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
@@ -32,8 +33,10 @@ const expenseSchema = new mongoose.Schema({
 const Expense = mongoose.model('Expense', expenseSchema);
 
 // 4. ROUTE creator
+app.use(express.static(path.join(__dirname)));
+
 app.get('/', (req, res) => {
-  res.json({ message: "Hello Vaishnavi!", status: "DB Connected" });
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // New expense creation route

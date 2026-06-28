@@ -1,0 +1,56 @@
+﻿curl.exe : *   Trying 127.0.0.1:3000...
+At line:1 char:1
++ curl.exe -sv http://127.0.0.1:3000/api/expenses 2>&1 | Out-File -Enco ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (*   Trying 127.0.0.1:3000...:Stri 
+   ng) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+* Established connection to 127.0.0.1 (127.0.0.1 port 3000) from 127.0.0.1 
+port 57107 
+* using HTTP/1.x
+> GET /api/expenses HTTP/1.1
+
+> Host: 127.0.0.1:3000
+
+> User-Agent: curl/8.19.0
+
+> Accept: */*
+
+> 
+
+* Request completely sent off
+< HTTP/1.1 404 Not Found
+
+< X-Powered-By: Express
+
+< Access-Control-Allow-Origin: *
+
+< Content-Security-Policy: default-src 'none'
+
+< X-Content-Type-Options: nosniff
+
+< Content-Type: text/html; charset=utf-8
+
+< Content-Length: 151
+
+< Date: Sun, 28 Jun 2026 12:59:22 GMT
+
+< Connection: keep-alive
+
+< Keep-Alive: timeout=5
+
+< 
+
+{ [151 bytes data]
+* Connection #0 to host 127.0.0.1:3000 left intact
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot GET /api/expenses</pre>
+</body>
+</html>
